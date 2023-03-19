@@ -1,6 +1,7 @@
 using CommanderGQL.Infrastructure.Data.EF.Data;
 using CommanderGQL.Infrastructure.GraphQL.Mutations;
 using CommanderGQL.Infrastructure.GraphQL.Queries;
+using CommanderGQL.Infrastructure.GraphQL.Subscription;
 using CommanderGQL.Infrastructure.GraphQL.Types;
 using graphql_api_app.Options;
 using GraphQL.Server.Ui.Voyager;
@@ -27,11 +28,13 @@ services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
+    .AddSubscriptionType<Subscription>()
     .AddType<PlatformType>()
     .AddType<CommandType>()
     .AddProjections()
     .AddFiltering()
-    .AddSorting();
+    .AddSorting()
+    .AddInMemorySubscriptions();
 
 services.AddControllers();
 services.AddEndpointsApiExplorer();
@@ -45,9 +48,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-//app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.UseWebSockets();
 
 app.MapControllers();
 app.MapGraphQL();

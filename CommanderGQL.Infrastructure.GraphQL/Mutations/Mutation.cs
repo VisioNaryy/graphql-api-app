@@ -3,6 +3,7 @@ using CommanderGQL.Infrastructure.Data.EF.Data;
 using CommanderGQL.Infrastructure.GraphQL.Models;
 using HotChocolate;
 using HotChocolate.Data;
+using HotChocolate.Subscriptions;
 
 namespace CommanderGQL.Infrastructure.GraphQL.Mutations;
 
@@ -11,7 +12,9 @@ public class Mutation
     [UseDbContext(typeof(AppDbContext))]
     public async Task<AddPlatformPayload> AddPlatformAsync(
         AddPlatformInput platformInput,
-        [ScopedService] AppDbContext context)
+        [ScopedService] AppDbContext context,
+        [Service] ITopicEventSender eventSender,
+        CancellationToken cts)
     {
         var platform = new Platform
         {
@@ -19,7 +22,9 @@ public class Mutation
         };
 
         await context.Platforms.AddAsync(platform);
-        await context.SaveChangesAsync();
+        await context.SaveChangesAsync(cts);
+
+        await eventSender.SendAsync(nameof(Subscription.Subscription.OnPlatformAdded), platform, cts);
 
         return new AddPlatformPayload(platform);
     }
@@ -27,7 +32,9 @@ public class Mutation
     [UseDbContext(typeof(AppDbContext))]
     public async Task<AddCommandPayload?> AddCommandAsync(
         AddCommandInput commandInput,
-        [ScopedService] AppDbContext context)
+        [ScopedService] AppDbContext context,
+        [Service] ITopicEventSender eventSender,
+        CancellationToken cts)
     {
         var (howTo, commandLine, platformId) = commandInput;
         
@@ -43,8 +50,10 @@ public class Mutation
             };
             
             await context.Commands.AddAsync(command);
-            await context.SaveChangesAsync();
+            await context.SaveChangesAsync(cts);
 
+            await eventSender.SendAsync(nameof(Subscription.Subscription.OnCommandAdded), command, cts);
+            
             return new AddCommandPayload(command);
         }
 
