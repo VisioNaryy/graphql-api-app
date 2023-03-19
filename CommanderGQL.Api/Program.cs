@@ -26,6 +26,7 @@ services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddType<PlatformType>()
+    .AddType<CommandType>()
     .AddProjections();
 
 services.AddControllers();
