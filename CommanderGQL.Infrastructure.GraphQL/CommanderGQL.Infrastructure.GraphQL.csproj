@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Commands" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\CommanderGQL.Common.Data\CommanderGQL.Common.Data.csproj" />
       <ProjectReference Include="..\CommanderGQL.Common\CommanderGQL.Common.csproj" />
       <ProjectReference Include="..\CommanderGQL.Infrastructure.Data\CommanderGQL.Infrastructure.Data.csproj" />

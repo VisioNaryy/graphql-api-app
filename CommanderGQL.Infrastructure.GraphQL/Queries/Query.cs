@@ -2,6 +2,7 @@
 using CommanderGQL.Infrastructure.Data.EF.Data;
 using HotChocolate;
 using HotChocolate.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommanderGQL.Infrastructure.GraphQL.Queries;
 
@@ -11,4 +12,9 @@ public class Query
     [UseProjection]
     public async Task<IQueryable<Platform>> GetPlatforms([ScopedService] AppDbContext context)
         => context.Platforms;
+    
+    [UseDbContext(typeof(AppDbContext))]
+    [UseProjection]
+    public async Task<IQueryable<Command>> GetCommands([ScopedService] AppDbContext context)
+        => context.Commands;
 }

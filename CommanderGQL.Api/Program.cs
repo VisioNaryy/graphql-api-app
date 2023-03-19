@@ -1,5 +1,6 @@
 using CommanderGQL.Infrastructure.Data.EF.Data;
 using CommanderGQL.Infrastructure.GraphQL.Queries;
+using CommanderGQL.Infrastructure.GraphQL.Types;
 using graphql_api_app.Options;
 using GraphQL.Server.Ui.Voyager;
 using Microsoft.EntityFrameworkCore;
@@ -21,8 +22,10 @@ services.AddPooledDbContextFactory<AppDbContext>(options =>
 });
 
 // GraphQL
-services.AddGraphQLServer()
+services
+    .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddType<PlatformType>()
     .AddProjections();
 
 services.AddControllers();
