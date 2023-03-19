@@ -16,4 +16,11 @@
       <Folder Include="Controllers" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CommanderGQL.Common.Api\CommanderGQL.Common.Api.csproj" />
+      <ProjectReference Include="..\CommanderGQL.Common\CommanderGQL.Common.csproj" />
+      <ProjectReference Include="..\CommanderGQL.Infrastructure.Data\CommanderGQL.Infrastructure.Data.csproj" />
+      <ProjectReference Include="..\CommanderGQL.Infrastructure.GraphQL\CommanderGQL.Infrastructure.GraphQL.csproj" />
+    </ItemGroup>
+
 </Project>
