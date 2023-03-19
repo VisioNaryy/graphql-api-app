@@ -13,6 +13,8 @@ public class PlatformType : ObjectType<Platform>
 
         descriptor.Field(p => p.LicenseKey).Description("Represents a purchased, valid license for the platform");
 
+        descriptor.Field(p => p.LicenseKey).Ignore();
+        
         descriptor
             .Field(p => p.Commands)
             .ResolveWith<PlatformResolver>(p => p.GetCommands(default!, default!))

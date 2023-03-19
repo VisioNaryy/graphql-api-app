@@ -1,4 +1,5 @@
 using CommanderGQL.Infrastructure.Data.EF.Data;
+using CommanderGQL.Infrastructure.GraphQL.Mutations;
 using CommanderGQL.Infrastructure.GraphQL.Queries;
 using CommanderGQL.Infrastructure.GraphQL.Types;
 using graphql_api_app.Options;
@@ -25,9 +26,12 @@ services.AddPooledDbContextFactory<AppDbContext>(options =>
 services
     .AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddMutationType<Mutation>()
     .AddType<PlatformType>()
     .AddType<CommandType>()
-    .AddProjections();
+    .AddProjections()
+    .AddFiltering()
+    .AddSorting();
 
 services.AddControllers();
 services.AddEndpointsApiExplorer();
