@@ -1,4 +1,4 @@
-﻿using CommanderGQL.Common.Models;
+﻿using CommanderGQL.Domain.Data.Entities;
 
 namespace CommanderGQL.Infrastructure.GraphQL.Models;
 

@@ -1,4 +1,4 @@
-﻿using CommanderGQL.Common.Models;
+﻿using CommanderGQL.Domain.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -16,8 +16,8 @@ public class AppDbContextConfiguration : IEntityTypeConfiguration<Platform>, IEn
 
     public void Configure(EntityTypeBuilder<Command> builder)
     {
-        builder.HasKey(p => p.Id);
 
+        builder.HasKey(p => p.Id);
         builder.Property(c => c.HowTo)
             .IsRequired();
         

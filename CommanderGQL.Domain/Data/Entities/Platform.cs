@@ -1,4 +1,4 @@
-﻿namespace CommanderGQL.Common.Models;
+﻿namespace CommanderGQL.Domain.Data.Entities;
 
 public class Platform
 {

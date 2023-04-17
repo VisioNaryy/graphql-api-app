@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CommanderGQL.Common.Data\CommanderGQL.Common.Data.csproj" />
-      <ProjectReference Include="..\CommanderGQL.Common\CommanderGQL.Common.csproj" />
+      <ProjectReference Include="..\CommanderGQL.Common.Infrastructure\CommanderGQL.Common.Infrastructure.csproj" />
+      <ProjectReference Include="..\CommanderGQL.Domain\CommanderGQL.Domain.csproj" />
       <ProjectReference Include="..\CommanderGQL.Infrastructure.Data\CommanderGQL.Infrastructure.Data.csproj" />
     </ItemGroup>
 

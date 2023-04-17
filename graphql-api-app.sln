@@ -6,9 +6,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Infrastructure", "2 Infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Infrastructure.Data", "CommanderGQL.Infrastructure.Data\CommanderGQL.Infrastructure.Data.csproj", "{25ECA750-3762-4B6B-A8EF-E97696D43255}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Common", "3 Common", "{24A2CC70-F887-431C-B957-62387F5C7F8D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Common", "4 Common", "{24A2CC70-F887-431C-B957-62387F5C7F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Common.Data", "CommanderGQL.Common.Data\CommanderGQL.Common.Data.csproj", "{7C30ED0A-F0A7-49C5-9925-2120101A02CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Common.Infrastructure", "CommanderGQL.Common.Infrastructure\CommanderGQL.Common.Infrastructure.csproj", "{7C30ED0A-F0A7-49C5-9925-2120101A02CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Common", "CommanderGQL.Common\CommanderGQL.Common.csproj", "{5323ECF2-094B-4C80-A96C-7DEB50A8462C}"
 EndProject
@@ -17,6 +17,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Presentation", "1 Presentation", "{2F9E33B7-6744-4281-943B-FC2DE34AAAA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Infrastructure.GraphQL", "CommanderGQL.Infrastructure.GraphQL\CommanderGQL.Infrastructure.GraphQL.csproj", "{4150DB58-19A3-4270-A74E-017A438312E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Domain", "3 Domain", "{8D745888-3C58-4D33-86E6-EF0D2AEFC88A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommanderGQL.Domain", "CommanderGQL.Domain\CommanderGQL.Domain.csproj", "{FABC3B5A-1823-4603-A2A8-28142D0767D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,10 @@ Global
 		{4150DB58-19A3-4270-A74E-017A438312E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4150DB58-19A3-4270-A74E-017A438312E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4150DB58-19A3-4270-A74E-017A438312E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABC3B5A-1823-4603-A2A8-28142D0767D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABC3B5A-1823-4603-A2A8-28142D0767D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABC3B5A-1823-4603-A2A8-28142D0767D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABC3B5A-1823-4603-A2A8-28142D0767D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{25ECA750-3762-4B6B-A8EF-E97696D43255} = {8AC9CF60-88A8-4EEB-BBB0-42B9DB72BB7D}
@@ -56,5 +64,6 @@ Global
 		{10EEB87D-750B-46AB-927D-730B88C111C7} = {24A2CC70-F887-431C-B957-62387F5C7F8D}
 		{03E1813F-A4A6-42F7-B3A7-5BF81FA2185F} = {2F9E33B7-6744-4281-943B-FC2DE34AAAA4}
 		{4150DB58-19A3-4270-A74E-017A438312E9} = {8AC9CF60-88A8-4EEB-BBB0-42B9DB72BB7D}
+		{FABC3B5A-1823-4603-A2A8-28142D0767D2} = {8D745888-3C58-4D33-86E6-EF0D2AEFC88A}
 	EndGlobalSection
 EndGlobal

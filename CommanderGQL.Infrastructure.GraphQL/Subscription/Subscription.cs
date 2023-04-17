@@ -1,4 +1,4 @@
-﻿using CommanderGQL.Common.Models;
+﻿using CommanderGQL.Domain.Data.Entities;
 using HotChocolate;
 using HotChocolate.Types;
 

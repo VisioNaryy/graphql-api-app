@@ -1,7 +1,8 @@
-﻿using CommanderGQL.Common.Models;
+﻿using CommanderGQL.Domain.Data.Entities;
 using CommanderGQL.Infrastructure.Data.EF.Data;
 using HotChocolate;
 using HotChocolate.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CommanderGQL.Infrastructure.GraphQL.Queries;
 
